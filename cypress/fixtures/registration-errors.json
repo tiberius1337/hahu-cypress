@@ -1,0 +1,9 @@
+{
+  "nameTooShort": "A névnek minimum 3 karakternek kell lennie.",
+  "nameSpecialChars": "A név nem tartalmazhat különleges karaktereket.",
+  "nameTooLong": "A név maximum 255 karakter lehet.",
+  "emailInvalid": "Nem megfelelő e-mail cím.",
+  "emailTaken": "A megadott e-mail cím már használatban van.",
+  "passwordTooShort": "A jelszónak minimum 8 karakternek kell lennie.",
+  "passwordTooLong": "A jelszó maximum 255 karakter lehet."
+}

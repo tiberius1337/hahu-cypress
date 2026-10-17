@@ -30,6 +30,7 @@ cypress/
 │   └── 2-ad-detail/      # 2. feladat tesztjei
 ├── fixtures/
 │   ├── ad-data.json      # a tesztelt hirdetés adatai (path, cím, ár, eladó elérhetősége)
+│   ├── registration-errors.json # a regisztráció elvárt hibaüzenetei
 │   └── user-data.json    # a sikeres regisztráció tesztadatai
 ├── pages/                # Page Object Model (RegistrationPage, AdDetailPage, ParkingPage)
 └── support/
@@ -60,6 +61,8 @@ A név, az e-mail és a jelszó mezőt választottam, mert ezekhez tartozik a le
 | Jelszó | 256 karakteres jelszó  | A jelszó maximum 255 karakter lehet.            |
 
 A „már regisztrált cím” tesztben a saját, belépéshez használt fiókom címét használom (`cypress.env.json`, nincs feltöltve a repóba, mert az valós helyzetben biztonsági kockázat lenne, de ha kell megadom a fiókot).
+
+Az elvárt hibaüzenetek a `cypress/fixtures/registration-errors.json`-ban vannak, így ha egy szöveg megváltozik az oldalon, csak ezt a fájlt kell átírni, a tesztkódhoz nem kell hozzányúlni.
 
 ### b) Sikeres regisztráció
 
