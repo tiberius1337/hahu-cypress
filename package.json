@@ -1,0 +1,41 @@
+{
+  "name": "hahu-cypress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E test suite for hasznaltauto.hu registration and ad detail pages, built with Cypress, using JavaScript.",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "cy:run": "cypress run --browser chrome",
+    "cy:run:headed": "cypress run --browser chrome --headed",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "testing",
+    "qa",
+    "page-object-model",
+    "hahu",
+    "hasznaltauto",
+    "test"
+  ],
+  "author": "Tibor Alekosz",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "cypress": "^16.2.0",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^7.0.2",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
+  },
+  "allowScripts": {
+    "cypress@16.2.0": true
+  }
+}
