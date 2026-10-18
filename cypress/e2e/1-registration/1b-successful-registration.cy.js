@@ -6,8 +6,8 @@ const user = { ...userData, email: userData.email.replace('@', `+${Date.now()}@`
 
 describe('Successful registration', () => {
   beforeEach(() => {
-    registrationPage.visit();
     cy.acceptCookies();
+    registrationPage.visit();
   });
 
   it('registers a new user with valid data', () => {

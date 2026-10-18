@@ -26,11 +26,11 @@ class AdDetailPage {
   }
 
   get emailButton() {
-    return cy.get('#seller-info-sidebar [data-testid="seller-email"]');
+    return cy.get('#seller-info-sidebar').getByTestId('seller-email');
   }
 
   get phoneButton() {
-    return cy.get('#seller-info-sidebar [data-testid="seller-phone-number-primary"]');
+    return cy.get('#seller-info-sidebar').getByTestId('seller-phone-number-primary');
   }
 
   get emailLink() {

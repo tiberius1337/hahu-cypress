@@ -4,10 +4,10 @@ import ad from '../../fixtures/ad-data.json';
 
 describe('Parking', () => {
   it('adds the ad to the parking', () => {
+    cy.acceptCookies();
     cy.intercept('POST', '/api/parkolo').as('saveToParking');
 
     adDetailPage.visit();
-    cy.acceptCookies();
     adDetailPage.parkingButton.should('contain.text', 'Parkolóba rakom');
 
     adDetailPage.clickParkingButton();

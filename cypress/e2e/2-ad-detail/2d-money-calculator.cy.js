@@ -3,8 +3,8 @@ import ad from '../../fixtures/ad-data.json';
 
 describe('Money calculator', () => {
   it('shows the calculator with the price of the car', () => {
-    adDetailPage.visit();
     cy.acceptCookies();
+    adDetailPage.visit();
 
     adDetailPage.moneyCalculator
       .should('be.visible')

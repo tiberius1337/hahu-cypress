@@ -34,11 +34,15 @@ cypress/
 │   └── user-data.json    # a sikeres regisztráció tesztadatai
 ├── pages/                # Page Object Model (RegistrationPage, AdDetailPage, ParkingPage)
 └── support/
-    ├── commands.js       # custom commandok: cy.login(), cy.acceptCookies()
+    ├── commands.js       # custom commandok: cy.getByTestId(), cy.login(), cy.acceptCookies()
     └── e2e.js            # minden teszt előtt lefut: betölti a commandokat, és elnyeli a third party scriptek hibáit
 ```
 
 A több oldalon megjelenő elemekhez (Didomi cookie banner, login modal) custom commandot használok, mert ezek egy-egy egyszerű műveletet jelentenek. Egy nagyobb projektben, ahol például a header sok elemét több oldalon is tesztelni kellene, külön `components/` mappába szervezném őket (pl. `HeaderComponent.js`).
+
+A `cy.acceptCookies()` a Didomi elfogadását `cy.session`-be teszi (`cacheAcrossSpecs: true`), így a bannerre csak egyszer kattint a teszt futásonként, utána a Cypress a mentett cookie-kból állítja vissza az elfogadott állapotot. A `validate` ellenőrzi, hogy a visszaállítás után megvan-e az `euconsent-v2` cookie, ha nincs, a session újra lefut és újra elfogadja a bannert.
+
+A `data-testid` selectorokhoz a `cy.getByTestId()` commandot használok. A command láncolható (`prevSubject: 'optional'`): önmagában az egész oldalon keres (`cy.getByTestId('loginform-submit')`), egy elem után láncolva csak azon belül (`cy.get('#seller-info-sidebar').getByTestId('seller-email')`). Erre azért van szükség, mert a hirdetés oldalon az eladó e-mail és telefonszám gombjának testid-ja háromszor szerepel, ezért ott az oldalsávra kell szűkíteni a keresést.
 
 # Megoldások
 

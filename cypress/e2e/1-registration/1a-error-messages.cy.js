@@ -3,8 +3,8 @@ import errors from '../../fixtures/registration-errors.json';
 
 describe('Registration error messages', () => {
   beforeEach(() => {
-    registrationPage.visit();
     cy.acceptCookies();
+    registrationPage.visit();
   });
 
   context('Name field', () => {

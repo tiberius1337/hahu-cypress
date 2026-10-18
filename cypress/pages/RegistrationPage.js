@@ -32,7 +32,7 @@ class RegistrationPage {
   }
 
   get submitButton() {
-    return cy.get('[data-testid="submit-button"]');
+    return cy.getByTestId('submit-button');
   }
 
   get nameError() {

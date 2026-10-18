@@ -2,8 +2,8 @@ import adDetailPage from '../../pages/AdDetailPage';
 
 describe('Partner links', () => {
   beforeEach(() => {
-    adDetailPage.visit();
     cy.acceptCookies();
+    adDetailPage.visit();
   });
 
   it('opens carVertical in a new tab', () => {

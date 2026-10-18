@@ -3,8 +3,8 @@ import ad from '../../fixtures/ad-data.json';
 
 describe('Seller contact', () => {
   beforeEach(() => {
-    adDetailPage.visit();
     cy.acceptCookies();
+    adDetailPage.visit();
   });
 
   it('reveals the e-mail address', () => {
